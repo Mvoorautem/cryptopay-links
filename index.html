@@ -1,20 +1,142 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Pay App Links Test</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f0f0f0; }
-        h1 { color: #2c3e50; }
-        p { font-size: 18px; }
-        a { color: #007bff; text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Pay – Betalen zoals het hoort</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .glow-green {
+      text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+    }
+    .c-logo {
+      filter: drop-shadow(0 0 30px #22c55e);
+    }
+    .neon-button {
+      transition: all 0.3s;
+    }
+    .neon-button:hover {
+      box-shadow: 0 0 30px #22c55e;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body>
-    <h1>Crypto Pay App Links Test Page</h1>
-    <p>Als App Links werkt → opent deze link direct de app (geen browser).</p>
-    <p>Test betaling: <a href="https://cryptopayapp.nl/pay?receiverId=2&amount=10.00">Open €10 betaling aan user 2</a></p>
-    <p>Test root: <a href="https://cryptopayapp.nl/">Root link</a></p>
+<body class="bg-zinc-950 text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="https://crypto-pay-checkout.vercel.app/assets/c-logo.png" alt="Crypto Pay" class="h-9 c-logo">
+        <span class="text-2xl font-bold tracking-tighter">Crypto Pay</span>
+      </div>
+      <div class="flex items-center gap-8">
+        <a href="#demo" class="hover:text-green-400 transition">Demo</a>
+        <a href="https://shop.cryptopayapp.nl" target="_blank" class="hover:text-green-400 transition">Webshop Demo</a>
+        <a href="https://checkout.cryptopayapp.nl" target="_blank" class="hover:text-green-400 transition">Checkout Demo</a>
+        <button onclick="window.location.href='https://cryptopayapp.nl'" 
+                class="px-6 py-2.5 bg-green-500 hover:bg-green-600 rounded-xl font-medium neon-button">
+          Voor merchants
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(at_center,#22c55e10_0%,transparent_70%)]"></div>
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h1 class="text-7xl font-black tracking-tighter mb-6">
+        Betalen zoals het<br><span class="text-green-400 glow-green">hoort</span>
+      </h1>
+      <p class="text-2xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+        USDT → euro in 1 seconde.<br>
+        Voor merchants, webshops én klanten.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://shop.cryptopayapp.nl" target="_blank"
+           class="neon-button px-10 py-4 bg-green-500 hover:bg-green-600 text-xl font-semibold rounded-2xl flex items-center justify-center gap-3">
+          <i class="fas fa-shopping-cart"></i>
+          Probeer als klant
+        </a>
+        <a href="#demo" 
+           class="neon-button px-10 py-4 border border-green-400 text-green-400 hover:bg-green-400 hover:text-zinc-950 text-xl font-semibold rounded-2xl">
+          Voor merchants →
+        </a>
+      </div>
+
+      <div class="mt-16 text-sm text-zinc-500">
+        Al live • Geen abonnement • Alleen 0,5% + €0,05 per transactie
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo sectie -->
+  <section id="demo" class="py-24 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold mb-4">Live demo in 30 seconden</h2>
+        <p class="text-xl text-zinc-400">Zie hoe het werkt voor klant én merchant</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Klant demo -->
+        <div class="bg-zinc-900 rounded-3xl p-8 border border-zinc-700">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <i class="fas fa-user text-green-400"></i> Als klant
+          </h3>
+          <div class="aspect-video bg-zinc-950 rounded-2xl flex items-center justify-center border border-green-400/30 mb-6">
+            <a href="https://shop.cryptopayapp.nl" target="_blank"
+               class="px-8 py-4 bg-green-500 hover:bg-green-600 rounded-2xl font-medium text-lg inline-flex items-center gap-3">
+              <i class="fas fa-external-link-alt"></i>
+              Naar demo webshop
+            </a>
+          </div>
+          <p class="text-zinc-400">Kies product → betaal met Wallet app → direct bevestigd</p>
+        </div>
+
+        <!-- Merchant demo -->
+        <div class="bg-zinc-900 rounded-3xl p-8 border border-zinc-700">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <i class="fas fa-store text-green-400"></i> Als merchant
+          </h3>
+          <div class="aspect-video bg-zinc-950 rounded-2xl flex items-center justify-center border border-green-400/30 mb-6">
+            <a href="https://checkout.cryptopayapp.nl/93d4bd38-9243-43ea-8e2d-5d65eef9d461" target="_blank"
+               class="px-8 py-4 bg-green-500 hover:bg-green-600 rounded-2xl font-medium text-lg inline-flex items-center gap-3">
+              <i class="fas fa-external-link-alt"></i>
+              Open live checkout
+            </a>
+          </div>
+          <p class="text-zinc-400">Maak invoice → klant betaalt → automatisch op je saldo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voor investeerders -->
+  <section class="py-24 bg-zinc-900 border-t border-b border-zinc-800">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-6">Voor investeerders</h2>
+      <p class="text-2xl text-zinc-400 mb-12">
+        CASP-licentie in aanvraag • Al volledig werkend product • Private test met eigen geld
+      </p>
+      <a href="https://cryptopayapp.nl/assets/pitch-deck.pdf" 
+         class="inline-flex items-center gap-3 px-10 py-5 bg-white text-zinc-950 rounded-2xl font-semibold text-xl hover:bg-green-400 transition">
+        <i class="fas fa-file-pdf"></i>
+        Download pitch deck (PDF)
+      </a>
+      <p class="mt-8 text-sm text-zinc-500">Wil je een live demo? Stuur een mail naar invest@cryptopayapp.nl</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+      © 2026 Crypto Pay • Alle rechten voorbehouden • Private custodial platform
+    </div>
+  </footer>
+
 </body>
 </html>
